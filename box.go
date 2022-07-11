@@ -106,8 +106,9 @@ func (b *box) RemoveAllCircles() error {
 
 	for _, shape := range b.shapes {
 		if _, isCircle := shape.(*Circle); !isCircle {
-			wasRemoved = true
 			newShapes = append(newShapes, shape)
+		} else {
+			wasRemoved = true
 		}
 	}
 
